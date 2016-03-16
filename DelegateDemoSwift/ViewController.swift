@@ -83,6 +83,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             editViewController.girlOldName = currentSelectCell!.girlNameLabel.text
         }
         
+        //push viewcontroller to navigationcontroller stack.
+        //First Seen, important
         navigationController?.pushViewController(editViewController, animated: true)
 
     }
