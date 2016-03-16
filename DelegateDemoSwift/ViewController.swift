@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, EditGirlNameViewControllerDelegate {
     
     let cellIdentifier = "BeautifulGirlCell"
     let IMAGE_NAME = "imageName"
@@ -17,6 +17,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var girlTableView: UITableView!
     
     private var dataSource:Array<Dictionary<String, String>>?
+    private var selectIndexPath: NSIndexPath?
     
     func createSourceData() {
         self.dataSource = Array<Dictionary<String, String>>();
@@ -31,6 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         girlTableView.dataSource = self
+        girlTableView.delegate = self
         createSourceData()
     }
 
@@ -63,6 +65,36 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
         
         return cell
+    }
+    
+    
+    //MARK: - TableView Delegate
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        selectIndexPath = indexPath
+        let currentSelectCell: BeautifulGirlTableViewCell? = girlTableView.cellForRowAtIndexPath(indexPath) as? BeautifulGirlTableViewCell
+        
+        let editViewController: EditGirlNameViewController = UIStoryboard(name: "Main", bundle:NSBundle.mainBundle()).instantiateViewControllerWithIdentifier("EditGirlNameViewController") as! EditGirlNameViewController
+        
+        editViewController.delegate = self
+        
+        if currentSelectCell != nil
+        {
+            editViewController.girlOldName = currentSelectCell!.girlNameLabel.text
+        }
+        
+        navigationController?.pushViewController(editViewController, animated: true)
+
+    }
+    
+    //MARK: - EditGirlNameViewControllerDelegate
+    func fetchGirlName(name: String) {
+        if selectIndexPath != nil
+        {
+            let index = (selectIndexPath?.row)!
+            dataSource![index][GIRL_NAME] = name
+            girlTableView.reloadData()
+        }
     }
 }
 

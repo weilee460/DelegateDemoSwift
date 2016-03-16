@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="R0z-MB-fRw">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -19,12 +19,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="98" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yG8-G4-dmY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="98" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yG8-G4-dmY">
                                 <rect key="frame" x="0.0" y="28" width="600" height="572"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BeautifulGirlCell" id="B61-v2-GMW" customClass="BeautifulGirlTableViewCell" customModule="DelegateDemoSwift" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="98"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="98"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B61-v2-GMW" id="ito-Ll-ml6">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="97.5"/>
@@ -36,7 +36,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KgS-p2-y9J">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KgS-p2-y9J">
                                                     <rect key="frame" x="0.0" y="1" width="139" height="95.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="KgS-p2-y9J" secondAttribute="height" multiplier="142:97" id="q2Z-x1-c9C"/>
@@ -72,14 +72,74 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yG8-G4-dmY" secondAttribute="bottom" id="hbB-qv-3X0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yG8-G4-dmY" secondAttribute="trailing" constant="-20" id="vdY-bb-iLe"/>
                             <constraint firstItem="yG8-G4-dmY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="wTQ-F3-J91"/>
-                            <constraint firstItem="yG8-G4-dmY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="z6E-4c-cq2"/>
+                            <constraint firstItem="yG8-G4-dmY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="z6E-4c-cq2"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="TMW-4N-caU"/>
                     <connections>
                         <outlet property="girlTableView" destination="yG8-G4-dmY" id="t5p-Hz-MmR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1117" y="429"/>
+        </scene>
+        <!--Edit Girl Name View Controller-->
+        <scene sceneID="Bcq-Jp-KYR">
+            <objects>
+                <viewController storyboardIdentifier="EditGirlNameViewController" id="ZSo-ni-y02" customClass="EditGirlNameViewController" customModule="DelegateDemoSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yjf-vd-Zp1"/>
+                        <viewControllerLayoutGuide type="bottom" id="pHG-97-i42"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p8t-Zb-bU5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Girl Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ju-jQ-IsU">
+                                <rect key="frame" x="20" y="49" width="80.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iOL-2s-udT">
+                                <rect key="frame" x="108.5" y="46" width="471.5" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1Ju-jQ-IsU" firstAttribute="top" secondItem="Yjf-vd-Zp1" secondAttribute="bottom" constant="29.5" id="4Ay-Tz-sh4"/>
+                            <constraint firstItem="iOL-2s-udT" firstAttribute="leading" secondItem="1Ju-jQ-IsU" secondAttribute="trailing" constant="8" id="BBI-Cb-dlx"/>
+                            <constraint firstItem="1Ju-jQ-IsU" firstAttribute="baseline" secondItem="iOL-2s-udT" secondAttribute="baseline" id="eW4-dr-ZDb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="iOL-2s-udT" secondAttribute="trailing" id="ptH-nL-epo"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="1Ju-jQ-IsU" secondAttribute="leading" id="szA-AR-Y1L"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="girlName" destination="iOL-2s-udT" id="T2R-tX-9RT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f4t-43-83J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1782" y="429"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="d7n-7T-zvF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="R0z-MB-fRw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lse-e1-W2K">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2gc-vi-2dN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nao-Ze-DP1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="305" y="429"/>
         </scene>
